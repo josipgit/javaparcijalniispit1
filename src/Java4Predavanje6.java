@@ -48,11 +48,15 @@ public class Java4Predavanje6 {
                 break;
         }
 
+        out.println("------------------------------------------");
+
         int j = 0;
         while (j < 16) {
             out.println(j);
             j++;
         }
+
+        out.println("------------------------------------------");
 
         do {
             out.println(j);

@@ -51,6 +51,5 @@ public class Java5DomaciRad3 {
 
         out.println("Zbroj brojeva od 1 do 1000 djeljivih sa 7 je: " + sumaDjeljivihSa7_ver2);
 
-
     } //end main
 } // end class
