@@ -1,11 +1,10 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 import static java.lang.System.*;
 
 import java.util.Locale;
 
-public class Java10Predavanje9 {
+public class Java10Predavanje9ArrayListRandomNovcanice {
     public static void main(String[] args) {
         /*
         int[] polje = new int[5];
@@ -48,15 +47,15 @@ public class Java10Predavanje9 {
             int cijeli = (int) (iznos / vrijednosti[i]);
             double ostatak = iznos % vrijednosti[i];
             out.println("Novcanica/kovanica od " + vrijednosti[i] + " treba vratiti " + cijeli + " komada");
-            if (ostatak <= 0)
-            {
-                for (int j = i; j <= vrijednosti.length; j++) {
-                    out.println("Novcanica/kovanica od " + vrijednosti[i] + " treba vratiti 0 komada");
+            if (ostatak <= 0) {
+                for (int j = i; j < vrijednosti.length; j++) {
+                    out.println("Novcanica/kovanica od " + vrijednosti[j] + " treba vratiti 0 komada");
                 }
                 break;
             }
             iznos = ostatak;
         }
-    }
-} // end main
+
+    } // end main
+} // end class
 
