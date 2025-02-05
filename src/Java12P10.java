@@ -22,7 +22,7 @@ public class Java12P10 {
         out.println("Broj znakova nakon skracivanja: " + recenica.length());
 
 
-        out.println("\n\n----------------------Zadatak 1-------------------------");
+        out.println("\n\n----------------Zadatak 1 ime prezime grad--------------");
 
         Scanner scanner = new Scanner(in).useLocale(Locale.US);
 
