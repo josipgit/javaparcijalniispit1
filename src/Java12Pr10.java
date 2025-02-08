@@ -42,7 +42,7 @@ public class Java12Pr10 {
         }
 
         System.out.println("Upisali ste ime: " + imePrezimeArray[0]);
-        System.out.println("Upisali ste ime: " + imePrezimeArray[1]);
+        System.out.println("Upisali ste prezime: " + imePrezimeArray[1]);
 
         System.out.print("Unesite ime grada: ");
         String grad = scanner.nextLine().toLowerCase(); // Convert to lowercase
