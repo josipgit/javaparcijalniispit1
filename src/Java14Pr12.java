@@ -1,6 +1,6 @@
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 import static java.lang.System.*;
 
@@ -23,9 +23,6 @@ public class Java14Pr12 {
         out.println(polaznik1.dohvatiPodatke());
 
         Studenti student1 = new Studenti("Ivan", "Ivic", 12345, "matematika", "hrvatski", "engleski");
-        //Studenti student2 = new Studenti("Ante", "Antic", 67891);
-        //Studenti student3 = new Studenti("Marko", "Markovic", 55555);
-
         out.println(student1);
         out.println(student1.getIme());
         out.println(student1.getBrojIndeksa());
@@ -33,6 +30,10 @@ public class Java14Pr12 {
         out.println(student1);
         out.println(student1.getListaIspita());
 
+        Studenti student2 = new Studenti("Marko", "Markovic", "mat", "jos", "rfg");
+        out.println(student2);
+        ArrayList<String> lista2 = new ArrayList<>(List.of("fefwhrthrhr3", "fhrthrthhrhhreg"));
+        student2.setListaIspita(lista2);
 
         Trokut trokut = new Trokut(1, 2, 3);
         Krug krug = new Krug(5);
