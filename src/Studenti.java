@@ -4,22 +4,20 @@ import java.util.Arrays;
 public class Studenti {
     private String ime;
     private String prezime;
-    private int brojIndeksa;
-    private ArrayList<String> listaIspita= new ArrayList<>();
+    public int brojIndeksa;
+    private ArrayList<String> listaIspita = new ArrayList<>();
 
-    public Studenti(String ime, String prezime, int brojIndeksa, String ispit1, String ispit2, String ispit3) {
-        this.ime = ime;
+    // first constructor with a fixed number of exams
+    public Studenti(String ime, String prezime, int brojIndeksa, String... ispiti) {
+        this.ime = ime; // this means this class (Studenti)
         this.prezime = prezime;
         this.brojIndeksa = brojIndeksa;
-        listaIspita.add(ispit1);
-        listaIspita.add(ispit2);
-        listaIspita.add(ispit3);
+        this.listaIspita.addAll(Arrays.asList(ispiti));
     }
 
+    // Constructor that defaults `brojIndeksa` to 5
     public Studenti(String ime, String prezime, String... ispiti) {
-        this.ime = ime;
-        this.prezime = prezime;
-        this.listaIspita.addAll(Arrays.asList(ispiti));
+        this(ime, prezime, 5, ispiti); // this calls the first constructor and passes 5 as brojIndeksa
     }
 
     public String getIme() {
@@ -60,6 +58,8 @@ public class Studenti {
                 "ime='" + ime + '\'' +
                 ", prezime='" + prezime + '\'' +
                 ", brojIndeksa=" + brojIndeksa +
+                ", listaIspita=" + listaIspita +
                 '}';
     }
+
 }

@@ -22,11 +22,11 @@ public class Pravokutnik {
 
     @Override
     public String toString() {
-        return "Pravokutnik{" +
-                "a=" + a +
-                ", b=" + b +
-                "Povrsina pravokutnika je " + PovrsinaPravokutnika() +
-                "Opseg pravokutnika je " + OpsegPravokutnika() +
+        return "Pravokutnik {" + " " +
+                "a=" + a + " " +
+                ", b=" + b + " " +
+                "Povrsina pravokutnika je " + PovrsinaPravokutnika() + " " +
+                "Opseg pravokutnika je " + OpsegPravokutnika() + " " +
                 '}';
     }
 }

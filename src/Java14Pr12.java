@@ -30,10 +30,11 @@ public class Java14Pr12 {
         out.println(student1);
         out.println(student1.getListaIspita());
 
-        Studenti student2 = new Studenti("Marko", "Markovic", "mat", "jos", "rfg");
+        Studenti student2 = new Studenti("Marko", "Markovic", "mat", "eng", "fiz");
         out.println(student2);
-        ArrayList<String> lista2 = new ArrayList<>(List.of("fefwhrthrhr3", "fhrthrthhrhhreg"));
+        ArrayList<String> lista2 = new ArrayList<>(List.of("predmet1", "predmet2"));
         student2.setListaIspita(lista2);
+        out.println(student2);
 
         Trokut trokut = new Trokut(1, 2, 3);
         Krug krug = new Krug(5);

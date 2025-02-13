@@ -19,10 +19,10 @@ public class Krug {
 
     @Override
     public String toString() {
-        return "Krug{" +
-                "radius=" + radius +
-                "Povrsina kruga je " + PovrsinaKruga() +
-                "Opseg kruga je " + OpsegKruga() +
+        return "Krug {" + " " +
+                "radius=" + radius + " " +
+                "Povrsina kruga je " + PovrsinaKruga() + " " +
+                "Opseg kruga je " + OpsegKruga() + " " +
                 '}';
     }
 }

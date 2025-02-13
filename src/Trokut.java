@@ -24,12 +24,13 @@ public class Trokut {
 
     @Override
     public String toString() {
-        return "Trokut{" +
-                "a=" + a +
-                ", b=" + b +
-                ", c=" + c +
-                " Povrsina trokuta je " + PovrsinaTrokuta() +
-                "Opseg trokuta je " + OpsegTrokuta();
+        return "Trokut {" + " " +
+                "a=" + a + " " +
+                ", b=" + b + " " +
+                ", c=" + c + " " +
+                " Povrsina trokuta je " + PovrsinaTrokuta() + " " +
+                "Opseg trokuta je " + OpsegTrokuta() + " " +
+                "}";
 
 
     }
