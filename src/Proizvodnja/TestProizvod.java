@@ -11,7 +11,7 @@ public class TestProizvod {
         ArrayList<Proizvod> proizvodi = new ArrayList<Proizvod>();
         String[] productNames = {"sunka", "sir", "jogurt", "kruh", "mlijeko", "break"};
         Random random = new Random();
-        while (true) {
+        while (true) {  // vrti dok ne dode break
             String randomName = productNames[random.nextInt(productNames.length)]; // Random product name
             int randomPrice = random.nextInt(100) + 1; // Random price between 1 and 100
             int randomValue = random.nextInt(100) + 1; // Random value between 1 and 100
@@ -19,8 +19,12 @@ public class TestProizvod {
             Proizvod p1 = new Proizvod(randomName, randomPrice, randomValue);
             proizvodi.add(p1);
             out.println(p1.IspisiProizvod());
-
             if (randomName == "break") break;
+        }
+
+        out.println("\n--------------------Ispis svih proizvoda u listi:---------");
+        for (Proizvod p : proizvodi) {
+            out.println(p.IspisiProizvod() + " ");
         }
     }
 }
