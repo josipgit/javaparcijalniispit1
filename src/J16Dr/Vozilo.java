@@ -25,6 +25,6 @@ public abstract class Vozilo { // mora bit abstract klasa ako ima ijednu abstrac
         this.brzina = brzina;
     }
 
-    public abstract boolean kretanje();
+    public abstract void kretanje(); // ova funkcija nema tijelo jer je apstraktna
 
 } // end class

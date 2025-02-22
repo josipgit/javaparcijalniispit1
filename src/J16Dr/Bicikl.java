@@ -11,9 +11,8 @@ public class Bicikl extends  Vozilo{
     }
 
     @Override
-    public boolean kretanje() {
-        out.println("Bicikl: " + tip + "Vrsta: " + vrsta + " se krece brzinom " + brzina);
-        return false;
+    public void kretanje() {
+        out.println("Bicikl: " + tip + "  Vrsta: " + vrsta + " se krece brzinom " + brzina);
     }
 
 } // end class

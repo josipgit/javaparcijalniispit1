@@ -12,8 +12,7 @@ public class Automobil extends Vozilo
     }
 
     @Override
-    public boolean kretanje() {
-        out.println("Automobil: " + tip + "Brzina: " + brzina);
-        return false;
+    public void kretanje() {
+        out.println("Automobil: " + tip + "  Brzina: " + brzina + "  Broj vrata: " + brojVrata);
     }
 }

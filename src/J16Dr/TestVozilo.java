@@ -16,8 +16,9 @@ public class TestVozilo {
         lista.add(auto1);
         lista.add(bike1);
 
-        for (Vozilo voz : lista)
-        {out.println(voz.kretanje());}
+        for (Vozilo voz : lista) {
+            voz.kretanje();
+        }
 
     }
 }
