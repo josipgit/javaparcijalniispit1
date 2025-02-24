@@ -8,7 +8,7 @@ interface RemoteControllable {
 
 public abstract class SmartDevice {
 
-    public abstract void performAction(Object object);
+    public abstract void performAction(Object object); // ako stavimo da ne prima nista bacat ce gresku
 
     public abstract void displayStatus();
 
@@ -24,16 +24,16 @@ class SmartLight extends SmartDevice implements RemoteControllable {
 
     @Override
     public void performAction(Object object) {
-        if (object instanceof Boolean) {
-            this.lightOnOff = (Boolean) object;
-            out.println("Light turned " + (lightOnOff ? "ON" : "OFF"));
+        if (object instanceof Boolean) { // ako je uneseni object tipa boolean
+            this.lightOnOff = (Boolean) object; // cast-aj u bool
+            out.println("Light turned " + (lightOnOff ? "ON" : "OFF")); // akoje true ispisi "ON", ako ne onda "OFF"
         } else {
             out.println("Invalid input for SmartLight. Expected a Boolean value.");
         }
     }
 
     public void displayStatus() {
-        if (lightOnOff) {
+        if (lightOnOff) { // if true
             out.println("Light intensity is: " + lightIntensity);
         } else {
             out.println("The light is OFF. Turn it ON to adjust intensity.");
@@ -60,7 +60,7 @@ class SmartThermostat extends SmartDevice implements RemoteControllable {
 
     @Override
     public void performAction(Object object) {
-        if (object instanceof Integer) {
+        if (object instanceof Integer) { // ako je uneseni object tipa integer
             this.temperatura = (Integer) object;
             out.println("Temperature set to: " + temperatura);
         } else {
@@ -114,16 +114,23 @@ class Main {
         SmartLight uredaj1 = new SmartLight();
         uredaj1.updateFirmware("Android 14.0");
         uredaj1.remoteControl();
-        uredaj1.performAction(true); // Turn on the light
+        uredaj1.performAction(true); // Turn on the light, ovde je tipa boolean
         uredaj1.setLightIntensity(80);
         uredaj1.displayStatus();
 
-        // Create a SmartSpeaker instance
-        SmartSpeaker uredaj2 = new SmartSpeaker();
-        uredaj2.updateFirmware("v1.2.3");
+        // Create a SmartThermostat instance
+        SmartThermostat uredaj2 = new SmartThermostat();
+        uredaj2.updateFirmware("Android 19.0");
         uredaj2.remoteControl();
-        uredaj2.performAction(50); // Set volume
-        uredaj2.performAction("Classical Music"); // Play music
+        uredaj2.performAction(true); // Turn on the light, ovde je tipa boolean
         uredaj2.displayStatus();
+
+        // Create a SmartSpeaker instance
+        SmartSpeaker uredaj3 = new SmartSpeaker();
+        uredaj3.updateFirmware("v1.2.3");
+        uredaj3.remoteControl();
+        uredaj3.performAction(50); // Set volume, ovde je tipa integer
+        uredaj3.performAction("Classical Music"); // Play music
+        uredaj3.displayStatus();
     }
 }
