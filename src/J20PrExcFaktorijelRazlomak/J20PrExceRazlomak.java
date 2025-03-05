@@ -88,7 +88,7 @@ public class J20PrExceRazlomak {
     }
 
     public static String skratiRazlomak(int brojnik, int nazivnik) {
-        int najveciZajednickiDjeljitelj = gcd(Math.abs(brojnik), Math.abs(nazivnik));
+        int najveciZajednickiDjeljitelj = najveciZajedniskiDjeljitelj(Math.abs(brojnik), Math.abs(nazivnik));
         brojnik /= najveciZajednickiDjeljitelj;
         nazivnik /= najveciZajednickiDjeljitelj;
 
@@ -100,7 +100,7 @@ public class J20PrExceRazlomak {
         return brojnik + "/" + nazivnik;
     }
 
-    public static int gcd(int a, int b) {
+    public static int najveciZajedniskiDjeljitelj(int a, int b) {
         while (b != 0) {
             int temp = b;
             b = a % b;
