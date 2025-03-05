@@ -40,10 +40,10 @@ public class J20PrExceRazlomak {
                 }
 
                 // Compute results
-                String zbroj = fractionSum(brojnik1, nazivnik1, brojnik2, nazivnik2);
-                String razlika = fractionDifference(brojnik1, nazivnik1, brojnik2, nazivnik2);
-                String produkt = fractionProduct(brojnik1, nazivnik1, brojnik2, nazivnik2);
-                String kolicnik = fractionQuotient(brojnik1, nazivnik1, brojnik2, nazivnik2);
+                String zbroj = zbrojRazlomaka(brojnik1, nazivnik1, brojnik2, nazivnik2);
+                String razlika = razlikaRazlomaka(brojnik1, nazivnik1, brojnik2, nazivnik2);
+                String produkt = umnozakRazlomaka(brojnik1, nazivnik1, brojnik2, nazivnik2);
+                String kolicnik = kolicnikRazlomaka(brojnik1, nazivnik1, brojnik2, nazivnik2);
 
                 // Display results
                 System.out.println("Zbroj je: " + zbroj);
@@ -62,25 +62,25 @@ public class J20PrExceRazlomak {
     }
 
     // Methods for fraction operations
-    public static String fractionSum(int brojnik1, int nazivnik1, int brojnik2, int nazivnik2) {
+    public static String zbrojRazlomaka(int brojnik1, int nazivnik1, int brojnik2, int nazivnik2) {
         int brojnik = brojnik1 * nazivnik2 + brojnik2 * nazivnik1;
         int nazivnik = nazivnik1 * nazivnik2;
         return skratiRazlomak(brojnik, nazivnik);
     }
 
-    public static String fractionDifference(int brojnik1, int nazivnik1, int brojnik2, int nazivnik2) {
+    public static String razlikaRazlomaka(int brojnik1, int nazivnik1, int brojnik2, int nazivnik2) {
         int brojnik = brojnik1 * nazivnik2 - brojnik2 * nazivnik1;
         int nazivnik = nazivnik1 * nazivnik2;
         return skratiRazlomak(brojnik, nazivnik);
     }
 
-    public static String fractionProduct(int brojnik1, int nazivnik1, int brojnik2, int nazivnik2) {
+    public static String umnozakRazlomaka(int brojnik1, int nazivnik1, int brojnik2, int nazivnik2) {
         int brojnik = brojnik1 * brojnik2;
         int nazivnik = nazivnik1 * nazivnik2;
         return skratiRazlomak(brojnik, nazivnik);
     }
 
-    public static String fractionQuotient(int brojnik1, int nazivnik1, int brojnik2, int nazivnik2) {
+    public static String kolicnikRazlomaka(int brojnik1, int nazivnik1, int brojnik2, int nazivnik2) {
         int brojnik = brojnik1 * nazivnik2;
         int nazivnik = nazivnik1 * brojnik2;
         if (nazivnik == 0) return "undefined"; // Prevent division by zero
