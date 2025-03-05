@@ -4,15 +4,18 @@ public class J20PrExceRazlomak {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        System.gc(); // garbage collection
+        System.out.flush(); // clear output buffers and ensure immediate writing to the output stream
+
         while (true) {
             try {
-                // Input first fraction
+                // Unosenje prvog razlomka
                 System.out.println("Unesi brojnik i nazivnik prvog razlomka (brojnik, enter, nazivnik):");
                 if (!scanner.hasNextInt()) {
                     scanner.next(); // Consume invalid input
                     throw new IllegalArgumentException("Unijeli ste pogrešan znak, unesite ponovo!");
                 }
-                int brojnik1 = scanner.nextInt();
+                int brojnik1 = scanner.nextInt(); //
 
                 if (!scanner.hasNextInt()) {
                     scanner.next();
@@ -20,7 +23,7 @@ public class J20PrExceRazlomak {
                 }
                 int nazivnik1 = scanner.nextInt();
 
-                // Input second fraction
+                // Unosenje drugog razlomka
                 System.out.println("Unesi brojnik i nazivnik drugog razlomka (brojnik, enter, nazivnik):");
                 if (!scanner.hasNextInt()) {
                     scanner.next();
@@ -34,18 +37,16 @@ public class J20PrExceRazlomak {
                 }
                 int nazivnik2 = scanner.nextInt();
 
-                // Validate nazivnikominators
+                // provjeri jel nazivnik nula
                 if (nazivnik1 == 0 || nazivnik2 == 0) {
                     throw new IllegalArgumentException("Nazivnik ne može biti nula, unesite ponovo!");
                 }
 
-                // Compute results
                 String zbroj = zbrojRazlomaka(brojnik1, nazivnik1, brojnik2, nazivnik2);
                 String razlika = razlikaRazlomaka(brojnik1, nazivnik1, brojnik2, nazivnik2);
                 String produkt = umnozakRazlomaka(brojnik1, nazivnik1, brojnik2, nazivnik2);
                 String kolicnik = kolicnikRazlomaka(brojnik1, nazivnik1, brojnik2, nazivnik2);
 
-                // Display results
                 System.out.println("Zbroj je: " + zbroj);
                 System.out.println("Razlika je: " + razlika);
                 System.out.println("Umnožak je: " + produkt);
@@ -59,6 +60,8 @@ public class J20PrExceRazlomak {
         }
 
         scanner.close(); // Close scanner after successful input
+        System.gc(); // garbage collection
+        System.out.flush(); // clear output buffers and ensure immediate writing to the output stream
     }
 
     // Methods for fraction operations
@@ -92,7 +95,7 @@ public class J20PrExceRazlomak {
         brojnik /= najveciZajednickiDjeljitelj;
         nazivnik /= najveciZajednickiDjeljitelj;
 
-        if (nazivnik < 0) {
+        if (nazivnik < 0) { // ovo je da bi nazivnik bio pozitivan
             brojnik = -brojnik;
             nazivnik = -nazivnik;
         }
