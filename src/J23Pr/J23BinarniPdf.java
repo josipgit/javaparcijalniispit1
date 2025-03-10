@@ -8,9 +8,10 @@ import static java.lang.System.in;
 import static java.lang.System.out;
 
 public class J23BinarniPdf {
+
     public static void main(String[] args) {
-        String ulazniFile = null; // u ovu var spremamo putanju na ulazni fajl
-        String izlazniFile = null; // putanja izlaznog fajla
+        String putanjaOriginalFajle = null; // u ovu var spremamo putanju na ulazni fajl
+        String putanjaIzlazneFajle = null; // putanja izlaznog fajla
         Scanner scanner = new Scanner(in).useLocale(Locale.US);
         InputStream ulaz = null;
         OutputStream izlaz = null;
@@ -18,9 +19,10 @@ public class J23BinarniPdf {
         try {
             // Unos putanje ulaznog fajla
             out.print("Unesite putanju originalne datoteke: ");
-            ulazniFile = scanner.nextLine();
-            File inputFile = new File(ulazniFile);
-            ulaz = new BufferedInputStream(new FileInputStream(inputFile)); // Buffered input stream for better performance
+            // C:\Users\josip\IntelliJProjects\JavaTecaj\src\J23Pr\original.pdf
+            putanjaOriginalFajle = scanner.nextLine();
+            File originalFajla = new File(putanjaOriginalFajle);
+            ulaz = new BufferedInputStream(new FileInputStream(originalFajla)); // Buffered input stream for better performance
 
             // Read binary data
             ByteArrayOutputStream buffer = new ByteArrayOutputStream();
@@ -33,14 +35,15 @@ public class J23BinarniPdf {
 
             // Unos putanje izlaznog fajla
             out.print("Unesite putanju kopirane datoteke: ");
-            izlazniFile = scanner.nextLine();
-            File outputFile = new File(izlazniFile);
+            // C:\Users\josip\IntelliJProjects\JavaTecaj\src\J23Pr\kopija.pdf
+            putanjaIzlazneFajle = scanner.nextLine();
+            File izlaznaFajla = new File(putanjaIzlazneFajle);
 
             // Ako izlazni fajl vec odprije postoji, ispisujemo njegov sadržaj i brišemo ga
-            if (outputFile.exists()) {
+            if (izlaznaFajla.exists()) {
                 out.println("Izlazni fajl vec postoji. Sadrzaj (prvih 100 bajtova):");
 
-                try (BufferedInputStream reader = new BufferedInputStream(new FileInputStream(outputFile))) {
+                try (BufferedInputStream reader = new BufferedInputStream(new FileInputStream(izlaznaFajla))) {
                     byte[] existingData = new byte[100]; // Read first 100 bytes for preview
                     int readBytes = reader.read(existingData);
                     if (readBytes > 0) {
@@ -52,14 +55,14 @@ public class J23BinarniPdf {
                 }
 
                 out.println("Brisem postojeci izlazni fajl: ");
-                if (!outputFile.delete()) {
+                if (!izlaznaFajla.delete()) {
                     System.err.println("Greska: Ne mogu obrisati postojeci izlazni fajl!");
                     return;
                 }
             }
 
-            // Kreiramo izlazni fajl i upisujemo podatke
-            izlaz = new DataOutputStream(new FileOutputStream(outputFile));
+            // Kreiramo izlazni fajl i upisujemo podatke sa izlaza preko stream-a u izlaznu fajlu
+            izlaz = new DataOutputStream(new FileOutputStream(izlaznaFajla));
             izlaz.write(fileData); // Write full binary data from input
 
             out.println("VAZNO!!!! Prvo treba zatvoriti ulaz i izlaz da bi mogli izbrisati fajl !!!!!!!!");
@@ -74,7 +77,7 @@ public class J23BinarniPdf {
             String userInput = scanner.nextLine().trim().toUpperCase();
 
             if (userInput.equals("Y")) {
-                if (outputFile.delete()) {
+                if (izlaznaFajla.delete()) {
                     out.println("Novostvoreni fajl uspjesno obrisan.");
                 } else {
                     System.err.println("Greska: Ne mogu obrisati novostvoreni fajl!");
