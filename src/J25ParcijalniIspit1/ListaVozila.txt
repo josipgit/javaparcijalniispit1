@@ -1,0 +1,4 @@
+Vozilo{regBroj='ST-1234-ZG', marka='AUDI', godinaProizvodnje=2022} Broj vrata: 7
+Vozilo{regBroj='ZG-4321-ST', marka='VW', godinaProizvodnje=2018} Broj vrata: 3
+Vozilo{regBroj='RI-9999-OS', marka='Harley-Davidson', godinaProizvodnje=1995} Tip motora: benzinski
+Vozilo{regBroj='OS-1111-RI', marka='Tomos', godinaProizvodnje=1965} Tip motora: benzinski
